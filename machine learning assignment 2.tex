@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\title{Machine Learning}
+\author{Raj Kumar Mishra\\21111041\\rajkumar96369427@gmail.com}
+\usepackage{graphicx}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Ensemble learning}
+Ensemble Learning is a machine learning technique that combines multiple individual models (learners) to create a more robust and accurate predictive model. Two popular techniques within Ensemble Learning are Bagging and Boosting.
+
+\subsection{Bagging}
+Bagging involves training multiple instances of the same model using different subsets of the training data. Each subset is created through random sampling with replacement which means some data points may be repeated while others may not be included in a particular subset. Each model is then trained on its respective subset, and their predictions are combined through averaging or majority voting to make the final prediction.
+
+\subsubsection{Example of Bagging}
+Random Forest
+A classic example of bagging is the Random Forest algorithm. Let say we are building a model to predict whether a given person is likely to buy a certain product based on age and income.  In a Random Forest, we would create multiple decision tree models, each trained on a randomly sampled subset of our dataset. Let say you create 100 decision trees. When you want to make a prediction for a new individual, you pass their age and income through each of the 100 trees. Each tree makes its own prediction and the final prediction is determined by majority voting. This ensemble approach helps reduce overfitting and improve the overall accuracy of the predictions.
+
+\subsection{Boosting}
+Boosting involves training multiple models sequentially, where each subsequent model focuses on correcting the errors made by the previous ones. Unlike bagging, where each model is trained independently, boosting adjusts the importance of training examples based on the errors made by previous models. The final prediction is a weighted combination of the predictions made by each model.
+
+\subsubsection{Example of Boosting}
+Adaptive Boosting
+Suppose you're working on a text classification problem where you want to classify news articles into categories like Politics, Sports, and Entertainment. You start with a dataset of 1000 labeled articles. You would train a weak learner on the entire dataset. You then assign higher weights to examples and lower weights to correctly classified examples.
+In the subsequent round, you train another weak learner on the same dataset, but the weights on the examples have been adjusted based on the previous model's performance. This process continues for a predetermined number of rounds, with each new model focusing on the previous examples. The final prediction is a weighted combination of the weak predictions.
+
+Both bagging and boosting are powerful techniques that can significantly improve the predictive performance of machine learning models by leveraging the strengths of multiple learners and mitigating their individual weaknesses.
+\end{document}
